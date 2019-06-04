@@ -5,13 +5,13 @@ import java.io.Serializable;
 public class Dept implements Serializable {
     private Long deptno;
     private String dname;
+    public Dept() {
+        System.err.println("*************** 实例化Dept类对象 ***************");
+    }
 
     @Override
     public String toString() {
-        return "Dept{" +
-                "deptno=" + deptno +
-                ", dname='" + dname + '\'' +
-                '}';
+        return "【对象地址编码：" + super.toString() + "】deptno = " + this.deptno + "、dname = " + this.dname;
     }
 
     public Long getDeptno() {
