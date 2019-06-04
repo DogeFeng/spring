@@ -15,8 +15,5 @@ public class SpringTestDept {
     @Test
     public void testEcho() {
         System.out.println(this.dept);
-        System.out.println(this.dept.getProjects());
-        System.out.println(this.dept.getProjects().getProperty("Hello"));
-        System.out.println(this.dept.getProjects().getProperty("Hello","Not Found Project"));
     }
 }

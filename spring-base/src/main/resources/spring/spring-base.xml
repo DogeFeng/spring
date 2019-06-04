@@ -5,15 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="dept" class="com.ytinf.vo.Dept">
-        <property name="deptno" value="10"/>
-        <property name="dname" value="财务部"/>
-        <property name="exists" value="yes"/>
-        <property name="projects">
-            <props> <!-- 设置Properties属性的内容 -->
-                <prop key="crm">客户关系管理系统</prop>
-                <prop key="erp">企业资源管理系统</prop>
-                <prop key="drp">企业销售管理系统</prop>
-            </props>
-        </property>
+        <constructor-arg name="param_dname" value="财务部"/>       <!-- 构造方法的第2个参数 -->
+        <constructor-arg name="param_deptno" value="10"/>       <!-- 构造方法的第1个参数 -->
     </bean>
 </beans>
