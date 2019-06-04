@@ -11,7 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:spring/spring-base.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class SpringTestDeptService {
-    @Autowired                                  // 自动注入
     private IDeptService deptService;    // 注入对象类型
     @Test
     public void testEcho() {
