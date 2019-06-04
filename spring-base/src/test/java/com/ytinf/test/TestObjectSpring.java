@@ -1,16 +1,14 @@
 package com.ytinf.test;
 
-import com.ytinf.vo.Dept;
-import org.springframework.context.ApplicationContext;
+import com.ytinf.vo.Message;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestObjectSpring {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-base.xml");
-        for (int x = 0; x < 20; x++) {
-            new Thread(() -> {
-                System.out.println("｛" + Thread.currentThread().getName() + "｝" + context.getBean("dept", Dept.class));
-            }).start();
-        }
+        // 如果要想实现销毁的操作处理，那么必须依靠子类的方法才可以完成
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-base.xml");
+        Message message = context.getBean("message", Message.class); // 获取Bean对象
+        message.send("Hello World!");
+        context.registerShutdownHook();
     }
 }
