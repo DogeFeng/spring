@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.Arrays;
+import java.util.Map;
 
 @ContextConfiguration(locations = {"classpath:spring/spring-base.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -18,10 +18,9 @@ public class SpringTestDept {
     @Test
     public void testEcho() {
         System.out.println(this.dept);
-        for (Emp emp : this.dept.getEmps()) {
-            System.out.println(emp);
+        for (Map.Entry<String,Emp> entry : this.dept.getEmps().entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
         }
-        System.out.println("部门业务：" + this.dept.getBusiness());
         System.out.println("List子类：" + this.dept.getEmps().getClass());
     }
 }

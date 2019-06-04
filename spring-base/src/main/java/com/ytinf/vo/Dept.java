@@ -2,29 +2,21 @@ package com.ytinf.vo;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Dept implements Serializable {
     private Long deptno;
     private String dname;
     private boolean exists;  // 是否存在
-    private Set<Emp> emps ; // 保存部门对应的多个员工信息
-    private Set<String> business ; // 部门的业务
+    private Map<String,Emp> emps ; // 保存部门对应的多个员工信息
 
-    public Set<Emp> getEmps() {
+    public Map<String, Emp> getEmps() {
         return emps;
     }
 
-    public void setEmps(Set<Emp> emps) {
+    public void setEmps(Map<String, Emp> emps) {
         this.emps = emps;
-    }
-
-    public Set<String> getBusiness() {
-        return business;
-    }
-
-    public void setBusiness(Set<String> business) {
-        this.business = business;
     }
 
     @Override

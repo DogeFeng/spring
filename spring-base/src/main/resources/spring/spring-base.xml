@@ -9,22 +9,11 @@
         <property name="dname" value="财务部"/>
         <property name="exists" value="yes"/>
         <property name="emps">
-            <set> <!-- 明确的表示现在要追加的是数组类型的定义 -->
-                <ref bean="empA"/>  <!-- 定义数组的引用内容 -->
-                <ref bean="empB"/>  <!-- 定义数组的引用内容 -->
-                <ref bean="empC"/>  <!-- 定义数组的引用内容 -->
-                <ref bean="empD"/>  <!-- 定义数组的引用内容 -->
-            </set>
-        </property>
-        <property name="business">
-            <set>
-                <value>市场活动</value>
-                <value>市场活动</value>
-                <value>市场活动</value>
-                <value>市场活动</value>
-                <value>成人嘻哈</value>
-                <value>胡编乱造</value>
-            </set>
+            <map>
+                <entry key="雇员-A" value-ref="empA"/>
+                <entry key="雇员-B" value-ref="empB"/>
+                <entry key="雇员-C" value-ref="empC"/>
+            </map>
         </property>
     </bean>
     <bean id="empA" class="com.ytinf.vo.Emp">
@@ -52,16 +41,6 @@
         <property name="ename" value="KING"/>
         <property name="salary" value="5000.23"/>    <!-- 内容为字符串，属性类型为Double -->
         <property name="age" value="55"/>
-        <property name="hiredate">
-            <bean class="java.util.Date"/>  <!-- 调用无参构造 -->
-        </property>
-        <property name="dept" ref="dept"/>  <!-- 引用其它的Bean配置 -->
-    </bean>
-    <bean id="empD" class="com.ytinf.vo.Emp">
-        <property name="empno" value="7369"/>    <!-- 内容为字符串，属性类型为Long -->
-        <property name="ename" value="SMITH"/>
-        <property name="salary" value="899.23"/>    <!-- 内容为字符串，属性类型为Double -->
-        <property name="age" value="30"/>
         <property name="hiredate">
             <bean class="java.util.Date"/>  <!-- 调用无参构造 -->
         </property>
