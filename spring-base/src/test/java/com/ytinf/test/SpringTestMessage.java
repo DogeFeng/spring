@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 @ContextConfiguration(locations = {"classpath:spring/spring-base.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class SpringTestMessage {
-    @Resource(name="echoMessage")                                  // 自动注入
+    @Resource(name = "channelMessage")
     private IMessageService messageService;    // 注入对象类型
     @Test
     public void testEcho() {
