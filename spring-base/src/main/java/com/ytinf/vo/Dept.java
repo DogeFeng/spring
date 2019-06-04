@@ -7,22 +7,22 @@ public class Dept implements Serializable {
     private Long deptno;
     private String dname;
     private boolean exists;  // 是否存在
-    private Emp[] emps ; // 保存部门对应的多个员工信息
-    private String [] business ; // 部门的业务
+    private List<Emp> emps ; // 保存部门对应的多个员工信息
+    private List<String> business ; // 部门的业务
 
-    public Emp[] getEmps() {
+    public List<Emp> getEmps() {
         return emps;
     }
 
-    public void setEmps(Emp[] emps) {
+    public void setEmps(List<Emp> emps) {
         this.emps = emps;
     }
 
-    public String[] getBusiness() {
+    public List<String> getBusiness() {
         return business;
     }
 
-    public void setBusiness(String[] business) {
+    public void setBusiness(List<String> business) {
         this.business = business;
     }
 

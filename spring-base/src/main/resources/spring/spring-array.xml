@@ -9,18 +9,18 @@
         <property name="dname" value="财务部"/>
         <property name="exists" value="yes"/>
         <property name="emps">
-            <list> <!-- 明确的表示现在要追加的是数组类型的定义 -->
+            <array> <!-- 明确的表示现在要追加的是数组类型的定义 -->
                 <ref bean="empA"/>  <!-- 定义数组的引用内容 -->
                 <ref bean="empB"/>  <!-- 定义数组的引用内容 -->
                 <ref bean="empC"/>  <!-- 定义数组的引用内容 -->
-            </list>
+            </array>
         </property>
         <property name="business">
-            <list>
+            <array>
                 <value>市场活动</value>
                 <value>成人嘻哈</value>
                 <value>胡编乱造</value>
-            </list>
+            </array>
         </property>
     </bean>
     <bean id="empA" class="com.ytinf.vo.Emp">
