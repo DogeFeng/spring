@@ -8,42 +8,12 @@
         <property name="deptno" value="10"/>
         <property name="dname" value="财务部"/>
         <property name="exists" value="yes"/>
-        <property name="emps">
-            <map>
-                <entry key="雇员-A" value-ref="empA"/>
-                <entry key="雇员-B" value-ref="empB"/>
-                <entry key="雇员-C" value-ref="empC"/>
-            </map>
+        <property name="projects">
+            <props> <!-- 设置Properties属性的内容 -->
+                <prop key="crm">客户关系管理系统</prop>
+                <prop key="erp">企业资源管理系统</prop>
+                <prop key="drp">企业销售管理系统</prop>
+            </props>
         </property>
-    </bean>
-    <bean id="empA" class="com.ytinf.vo.Emp">
-        <property name="empno" value="7369"/>    <!-- 内容为字符串，属性类型为Long -->
-        <property name="ename" value="SMITH"/>
-        <property name="salary" value="899.23"/>    <!-- 内容为字符串，属性类型为Double -->
-        <property name="age" value="30"/>
-        <property name="hiredate">
-            <bean class="java.util.Date"/>  <!-- 调用无参构造 -->
-        </property>
-        <property name="dept" ref="dept"/>  <!-- 引用其它的Bean配置 -->
-    </bean>
-    <bean id="empB" class="com.ytinf.vo.Emp">
-        <property name="empno" value="7566"/>    <!-- 内容为字符串，属性类型为Long -->
-        <property name="ename" value="FORD"/>
-        <property name="salary" value="3509.23"/>    <!-- 内容为字符串，属性类型为Double -->
-        <property name="age" value="35"/>
-        <property name="hiredate">
-            <bean class="java.util.Date"/>  <!-- 调用无参构造 -->
-        </property>
-        <property name="dept" ref="dept"/>  <!-- 引用其它的Bean配置 -->
-    </bean>
-    <bean id="empC" class="com.ytinf.vo.Emp">
-        <property name="empno" value="7839"/>    <!-- 内容为字符串，属性类型为Long -->
-        <property name="ename" value="KING"/>
-        <property name="salary" value="5000.23"/>    <!-- 内容为字符串，属性类型为Double -->
-        <property name="age" value="55"/>
-        <property name="hiredate">
-            <bean class="java.util.Date"/>  <!-- 调用无参构造 -->
-        </property>
-        <property name="dept" ref="dept"/>  <!-- 引用其它的Bean配置 -->
     </bean>
 </beans>

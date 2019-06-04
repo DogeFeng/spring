@@ -3,20 +3,21 @@ package com.ytinf.vo;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 
 public class Dept implements Serializable {
     private Long deptno;
     private String dname;
     private boolean exists;  // 是否存在
-    private Map<String,Emp> emps ; // 保存部门对应的多个员工信息
+    private Properties projects ;
 
-    public Map<String, Emp> getEmps() {
-        return emps;
+    public Properties getProjects() {
+        return projects;
     }
 
-    public void setEmps(Map<String, Emp> emps) {
-        this.emps = emps;
+    public void setProjects(Properties projects) {
+        this.projects = projects;
     }
 
     @Override
