@@ -4,8 +4,16 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="dept" class="com.ytinf.vo.Dept">
-        <constructor-arg name="param_dname" value="财务部"/>       <!-- 构造方法的第2个参数 -->
-        <constructor-arg name="param_deptno" value="10"/>       <!-- 构造方法的第1个参数 -->
+    <bean id="emp" class="com.ytinf.vo.Emp" autowire="byType">  <!-- 根据类型自动引用 -->
+        <property name="empno" value="7369"/>
+        <property name="ename" value="SMITH"/>
+    </bean>
+    <bean id="dept" class="com.ytinf.vo.Dept" autowire-candidate="false">   <!-- 取消候选资格 -->
+        <property name="deptno" value="10"/>
+        <property name="dname" value="财务部"/>
+    </bean>
+    <bean id="deptbackup" class="com.ytinf.vo.Dept">
+        <property name="deptno" value="90"/>
+        <property name="dname" value="后勤部"/>
     </bean>
 </beans>
