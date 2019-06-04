@@ -2,6 +2,7 @@ package com.ytinf.vo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 public class Emp implements Serializable {
     private Long empno ;
@@ -13,6 +14,22 @@ public class Emp implements Serializable {
 
     public Dept getDept() {
         return dept;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Emp emp = (Emp) o;
+        return empno.equals(emp.empno) &&
+                ename.equals(emp.ename) &&
+                salary.equals(emp.salary) &&
+                age.equals(emp.age);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(empno, ename, salary, age);
     }
 
     public void setDept(Dept dept) {
