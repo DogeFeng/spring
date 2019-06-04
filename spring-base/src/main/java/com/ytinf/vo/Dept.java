@@ -1,11 +1,30 @@
 package com.ytinf.vo;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Dept implements Serializable {
     private Long deptno;
     private String dname;
     private boolean exists;  // 是否存在
+    private Emp[] emps ; // 保存部门对应的多个员工信息
+    private String [] business ; // 部门的业务
+
+    public Emp[] getEmps() {
+        return emps;
+    }
+
+    public void setEmps(Emp[] emps) {
+        this.emps = emps;
+    }
+
+    public String[] getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(String[] business) {
+        this.business = business;
+    }
 
     @Override
     public String toString() {
