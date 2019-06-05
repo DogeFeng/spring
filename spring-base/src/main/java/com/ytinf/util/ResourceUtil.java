@@ -8,7 +8,6 @@ public class ResourceUtil {
     private Resource[] resources ;  // 描述所有的资源
     // setter、getter方法、略 ...
 
-
     public Resource[] getResources() {
         return resources;
     }
@@ -17,3 +16,4 @@ public class ResourceUtil {
         this.resources = resources;
     }
 }
+
