@@ -1,32 +1,24 @@
 package com.ytinf.vo;
 
-import java.io.Serializable;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+@Component
 public class Dept implements Serializable {
-    private Long deptno;
+    @Value("#{item.createtion?.time}")
+    private Long deptno;    // 将创建日期的时间数字作为部门编号
+    @Value("#{item.title + '多可爱的部门'}")
     private String dname;
-    public Dept() {
-        System.err.println("*************** 实例化Dept类对象 ***************");
-    }
+    @Value("#{item.contents[1]}")
+    private String bussiness ;
 
     @Override
     public String toString() {
-        return "【对象地址编码：" + super.toString() + "】deptno = " + this.deptno + "、dname = " + this.dname;
-    }
-
-    public Long getDeptno() {
-        return deptno;
-    }
-
-    public void setDeptno(Long deptno) {
-        this.deptno = deptno;
-    }
-
-    public String getDname() {
-        return dname;
-    }
-
-    public void setDname(String dname) {
-        this.dname = dname;
+        return "Dept{" +
+                "deptno=" + deptno +
+                ", dname='" + dname + '\'' +
+                ", bussiness='" + bussiness + '\'' +
+                '}';
     }
 }
