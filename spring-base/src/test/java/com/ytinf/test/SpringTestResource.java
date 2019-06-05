@@ -4,6 +4,7 @@ import com.ytinf.util.ResourceUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -18,17 +19,10 @@ public class SpringTestResource {
 
     @Test
     public void testFileResource() throws Exception {
-        this.input(this.resourceUtil.getFileResource().getInputStream());
-    }
-
-    @Test
-    public void testClasspathResource() throws Exception {
-        this.input(this.resourceUtil.getClasspathResource().getInputStream());
-    }
-
-    @Test
-    public void testUrlhResource() throws Exception {
-        this.input(this.resourceUtil.getUrlResource().getInputStream());
+        for (Resource resource : this.resourceUtil.getResources()) {
+            this.input(resource.getInputStream());
+            System.err.println("========================== 避免混淆的换行线 ==========================");
+        }
     }
 
     public void input(InputStream input) {
