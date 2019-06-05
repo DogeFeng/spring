@@ -8,7 +8,9 @@
             https://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 进行扫描包的设置，如果要设置多个包，则可以使用“,”拆分 -->
     <context:component-scan base-package="com.ytinf.dao.impl,com.ytinf.service.impl"/>
-
-    <bean id="echoMessage" class="com.ytinf.service.impl.EchoServiceImpl"/>
-    <bean id="channelMessage" class="com.ytinf.service.impl.ChannelServiceImpl"/>
+    <bean id="resourceUtil" class="com.ytinf.util.ResourceUtil">
+        <property name="fileResource" value="file:D:\hello.txt"/>
+        <property name="classpathResource" value="spring/spring-base.xml"/>
+        <property name="urlResource" value="http://pivotal.io/"/>
+    </bean>
 </beans>
