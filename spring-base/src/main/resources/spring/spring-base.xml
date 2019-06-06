@@ -17,6 +17,8 @@
         <aop:aspect ref="serviceAdvice">    <!-- 进行代码的织入处理 -->
             <aop:before method="beforeHandle" arg-names="vo" pointcut="execution(public * com.ytinf.service..*.*(..)) and args(vo)"/>
             <aop:after method="afterHandle" pointcut-ref="commonPointcut"/>
+            <aop:after-returning method="returnHandle" pointcut-ref="commonPointcut" returning="resval" arg-names="resval"/>
+            <aop:after-throwing method="throwHandle" pointcut-ref="commonPointcut" throwing="e" arg-names="e"/>
         </aop:aspect>
     </aop:config>
 </beans>

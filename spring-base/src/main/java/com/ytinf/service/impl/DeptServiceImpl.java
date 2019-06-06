@@ -14,6 +14,9 @@ public class DeptServiceImpl implements IDeptService {
 
     @Override
     public boolean edit(Dept vo) {
+        if (vo == null) {
+            throw new RuntimeException("操作的对象数据为NULL。") ;
+        }
         System.out.println("【DeptService】修改部门信息，dept = " + vo);
         return false;
     }
