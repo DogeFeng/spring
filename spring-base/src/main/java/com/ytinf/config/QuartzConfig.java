@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.*;
 
-@Configuration  // 该类为一个程序配置的Bean
+//@Configuration  // 该类为一个程序配置的Bean
 public class QuartzConfig {
     // 1、此时的定时任务没有特定的父类继承，所以需要进行配置处理
-    @Bean("factoryBean")
+    //@Bean("factoryBean")
     public MethodInvokingJobDetailFactoryBean getMethodTaskFactory() {
         MethodInvokingJobDetailFactoryBean methodFactoryBean = new MethodInvokingJobDetailFactoryBean() ;
         methodFactoryBean.setTargetObject(new MyTask());
@@ -20,7 +20,7 @@ public class QuartzConfig {
         return methodFactoryBean ;
     }
     // 2、配置一个Cron定时调度Bean
-    @Bean
+    //@Bean
     public CronTriggerFactoryBean getCronTriggerFactoryBean(
             @Autowired
             MethodInvokingJobDetailFactoryBean factoryBean
@@ -32,7 +32,7 @@ public class QuartzConfig {
     }
 
     // 3、设置一个任务的调度器，所有的调度器依靠TriggerFactoryBean创建
-    @Bean
+    //@Bean
     public SchedulerFactoryBean getSchedulerFactoryBean(
             @Autowired
             CronTriggerFactoryBean triggerFactoryBean
