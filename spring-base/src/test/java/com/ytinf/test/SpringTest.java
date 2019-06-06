@@ -17,4 +17,11 @@ public class SpringTest {
     public void testEdit() {
         System.out.println(this.deptService.edit(null));
     }
+    @Test
+    public void testEdit2() {
+        Dept dept = new Dept() ;
+        dept.setDeptno(10L);
+        dept.setDname("财务部");
+        System.out.println(this.deptService.edit(dept));
+    }
 }
