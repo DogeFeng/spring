@@ -11,15 +11,5 @@
             https://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- 进行扫描包的设置，如果要设置多个包，则可以使用“,”拆分 -->
     <context:component-scan base-package="com.ytinf"/>
-    <bean id="serviceAdvice" class="com.ytinf.aop.ServiceAdvice"/>  <!-- 辅助处理类 -->
-    <aop:config>    <!-- 进行AOP的具体配置 -->
-        <aop:pointcut id="commonPointcut" expression="execution(public * com.ytinf.service..*.*(..))"/>
-        <aop:aspect ref="serviceAdvice">    <!-- 进行代码的织入处理 -->
-            <aop:around method="aroundHandle" pointcut-ref="commonPointcut"/>
-            <aop:before method="beforeHandle" arg-names="vo" pointcut="execution(public * com.ytinf.service..*.*(..)) and args(vo)"/>
-            <aop:after method="afterHandle" pointcut-ref="commonPointcut"/>
-            <aop:after-returning method="returnHandle" pointcut-ref="commonPointcut" returning="resval" arg-names="resval"/>
-            <aop:after-throwing method="throwHandle" pointcut-ref="commonPointcut" throwing="e" arg-names="e"/>
-        </aop:aspect>
-    </aop:config>
+    <aop:aspectj-autoproxy/>    <!-- 启用Annotation注解支持 -->
 </beans>
