@@ -6,6 +6,7 @@ import org.quartz.SimpleTrigger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
@@ -22,15 +23,15 @@ public class QuartzConfig {
         factoryBean.setJobDataMap(jobDataMap);  // 设置任务的执行属性
         return factoryBean ;
     }
-    // 2、配置一个任务的触发器，采用间隔触发的形式完成
+    // 2、配置一个Cron定时调度Bean
     @Bean
-    public SimpleTriggerFactoryBean getSimpleTriggerFactoryBean(
+    public CronTriggerFactoryBean getCronTriggerFactoryBean(
             @Autowired
             JobDetailFactoryBean jobDetailFactoryBean
     ) {
-        SimpleTriggerFactoryBean triggerFactoryBean = new SimpleTriggerFactoryBean() ;
+        CronTriggerFactoryBean triggerFactoryBean = new CronTriggerFactoryBean() ;
         triggerFactoryBean.setJobDetail(jobDetailFactoryBean.getObject());  // 任务的执行详情
-        triggerFactoryBean.setRepeatInterval(1000); // 定义间隔触发，每秒执行1次
+        triggerFactoryBean.setCronExpression("0 * * * * ?");    // 每分钟触发一次
         return triggerFactoryBean ;
     }
 
@@ -38,7 +39,7 @@ public class QuartzConfig {
     @Bean
     public SchedulerFactoryBean getSchedulerFactoryBean(
             @Autowired
-            SimpleTriggerFactoryBean triggerFactoryBean
+            CronTriggerFactoryBean triggerFactoryBean
     ) {
         SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean() ;
         schedulerFactoryBean.setTriggers(triggerFactoryBean.getObject());   // 设置要执行的调度器
