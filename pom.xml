@@ -11,6 +11,8 @@
         <module>spring-base</module>
         <module>spring-jms-queue-producer</module>
         <module>spring-jms-queue-consumer</module>
+		<module>spring-jms-topic-producer</module>
+		<module>spring-jms-topic-consumer</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
