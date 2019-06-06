@@ -16,11 +16,7 @@ public class TestJMSProducer {
     @Test
     public void testSend() throws Exception {
         for (int x = 0; x < 100; x++) {
-            int temp = x;
-            new Thread(() -> {
-                this.messageService.send("【" + Thread.currentThread().getName() + "】晚上一起吃粽子，好嗨皮哦，消息编号：" + temp) ;
-            }, "消息生产者 - " + x).start();
+            this.messageService.send("【" + Thread.currentThread().getName() + "】晚上一起吃粽子，好嗨皮哦，消息编号：" + x);
         }
-        Thread.sleep(Long.MAX_VALUE);
     }
 }
