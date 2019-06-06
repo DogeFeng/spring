@@ -10,6 +10,7 @@
     <modules>
         <module>spring-base</module>
         <module>spring-jms-queue-producer</module>
+        <module>spring-jms-queue-consumer</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
