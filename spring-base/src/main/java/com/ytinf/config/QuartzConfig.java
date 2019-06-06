@@ -1,12 +1,7 @@
 package com.ytinf.config;
 
-import com.ytinf.task.MyTask;
-import org.quartz.JobDataMap;
-import org.quartz.SimpleTrigger;
-import org.springframework.beans.factory.FactoryBean;
+import com.ytinf.task.MyTaskFirst;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.*;
 
 //@Configuration  // 该类为一个程序配置的Bean
@@ -15,7 +10,7 @@ public class QuartzConfig {
     //@Bean("factoryBean")
     public MethodInvokingJobDetailFactoryBean getMethodTaskFactory() {
         MethodInvokingJobDetailFactoryBean methodFactoryBean = new MethodInvokingJobDetailFactoryBean() ;
-        methodFactoryBean.setTargetObject(new MyTask());
+        methodFactoryBean.setTargetObject(new MyTaskFirst());
         methodFactoryBean.setTargetMethod("runJob"); // 设置定时任务执行的方法
         return methodFactoryBean ;
     }

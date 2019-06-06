@@ -12,4 +12,5 @@
     <!-- 进行扫描包的设置，如果要设置多个包，则可以使用“,”拆分 -->
     <context:component-scan base-package="com.ytinf"/>
     <task:annotation-driven/>
+    <task:scheduler id="scheduler" pool-size="3"/>
 </beans>
