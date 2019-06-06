@@ -1,6 +1,7 @@
 package com.ytinf.test;
 
 import com.ytinf.service.IDeptService;
+import com.ytinf.vo.Dept;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,10 @@ public class SpringTest {
     @Autowired
     private IDeptService deptService ;
     @Test
-    public void testAdd() {
-        System.out.println(this.deptService.add());
+    public void testEdit() {
+        Dept dept = new Dept() ;
+        dept.setDeptno(10L);
+        dept.setDname("财务部");
+        System.out.println(this.deptService.edit(dept));
     }
 }

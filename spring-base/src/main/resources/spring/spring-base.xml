@@ -15,7 +15,7 @@
     <aop:config>    <!-- 进行AOP的具体配置 -->
         <aop:pointcut id="commonPointcut" expression="execution(public * com.ytinf.service..*.*(..))"/>
         <aop:aspect ref="serviceAdvice">    <!-- 进行代码的织入处理 -->
-            <aop:before method="beforeHandle" pointcut-ref="commonPointcut"/>
+            <aop:before method="beforeHandle" arg-names="vo" pointcut="execution(public * com.ytinf.service..*.*(..)) and args(vo)"/>
             <aop:after method="afterHandle" pointcut-ref="commonPointcut"/>
         </aop:aspect>
     </aop:config>
