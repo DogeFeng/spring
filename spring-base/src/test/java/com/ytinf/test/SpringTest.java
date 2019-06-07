@@ -1,27 +1,20 @@
 package com.ytinf.test;
 
-import com.ytinf.service.IDeptService;
-import com.ytinf.vo.Dept;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.sql.DataSource;
+
 @ContextConfiguration(locations = {"classpath:spring/spring-base.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class SpringTest {
     @Autowired
-    private IDeptService deptService ;
+    private DataSource dataSource ;
     @Test
-    public void testEdit() {
-        System.out.println(this.deptService.edit(null));
-    }
-    @Test
-    public void testEdit2() {
-        Dept dept = new Dept() ;
-        dept.setDeptno(10L);
-        dept.setDname("财务部");
-        System.out.println(this.deptService.edit(dept));
+    public void testDataSource() {
+        System.out.println(this.dataSource);
     }
 }
