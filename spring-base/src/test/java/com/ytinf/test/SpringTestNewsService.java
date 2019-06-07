@@ -14,6 +14,6 @@ public class SpringTestNewsService {
     private INewsService newsService ;
     @Test
     public void testRemove() {
-        System.out.println(this.newsService.remove(6));
+        System.out.println(this.newsService.remove(7));
     }
 }
