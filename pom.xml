@@ -31,9 +31,16 @@
         <log4j.version>2.11.2</log4j.version>
         <slf4j.version>1.7.26</slf4j.version>
         <slf4j-log4j.version>1.7.26</slf4j-log4j.version>
+        <c3p0.version>0.9.5.4</c3p0.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.mchange</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>${c3p0.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
