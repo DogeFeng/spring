@@ -9,6 +9,7 @@
     <version>1.0</version>
     <modules>
         <module>spring-base</module>
+        <module>spring-web</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
@@ -35,6 +36,18 @@
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+
             <dependency>
                 <groupId>com.mchange</groupId>
                 <artifactId>c3p0</artifactId>
