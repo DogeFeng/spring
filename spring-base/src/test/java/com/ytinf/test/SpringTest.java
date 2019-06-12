@@ -16,6 +16,6 @@ public class SpringTest {
     @Test
     public void testDataSource() {
 
-        System.out.println(this.dataSource);
+        System.out.println("=====" + this.dataSource);
     }
 }

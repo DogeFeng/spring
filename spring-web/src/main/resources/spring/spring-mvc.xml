@@ -12,4 +12,14 @@
     <context:component-scan base-package="com.ytinf.action"/>
     <mvc:annotation-driven/>    <!-- 启用控制层的注解配置模式 -->
     <mvc:default-servlet-handler/>  <!-- 使用之前配置的DispatcherServlet类处理请求 -->
+    <!-- 定义一个页面资源解析的处理类，该类的主要功能是匹配路径的前缀与后缀 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>   <!-- 路径前缀配置 -->
+        <property name="suffix" value=".jsp"/> <!-- 匹配路径后缀 -->
+    </bean>
+    <!-- 为保存在WEB-INF下所有的静态资源设置映射访问路径 -->
+    <mvc:resources mapping="/mvcjs/**" location="/WEB-INF/js/"/>
+    <mvc:resources mapping="/mvccss/**" location="/WEB-INF/css/"/>
+    <mvc:resources mapping="/mvcimages/**" location="/WEB-INF/images/"/>
+    <mvc:resources mapping="/mvcbootstrap/**" location="/WEB-INF/bootstrap/"/>
 </beans>
