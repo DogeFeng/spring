@@ -8,8 +8,8 @@
 </head>
 <body>
 <%!
-    public static String GOODS_ADD_DO_URL = "pages/admin/goods/goods_add_do.jsp" ;
-    public static String GOODS_LIST_URL = "pages/admin/goods/goods_list.jsp" ;
+    public static String GOODS_ADD_DO_URL = "pages/admin/goods/goods_add_do.action" ;
+    public static String GOODS_LIST_URL = "pages/admin/goods/goods_list.action" ;
 %>
 <%
     request.setCharacterEncoding("UTF-8") ;
@@ -38,9 +38,9 @@
                             <span class="col-md-5" id="priceSpan">*</span>
                         </div>
                         <div class="form-group" id="itemDiv">
-                            <label class="col-md-2 control-label" for="item">商品分类：</label>
+                            <label class="col-md-2 control-label" for="iid">商品分类：</label>
                             <div class="col-md-5">
-                                <select id="item" name="item" class="form-control">
+                                <select id="iid" name="iid" class="form-control">
                                     <option value="">========= 请选择商品所属分类 =========</option>
                                     <option value="1">生活用品</option>
                                     <option value="2">数码产品</option>
@@ -78,7 +78,7 @@
                             <span class="col-md-5" id="photoSpan">*</span>
                         </div>
                         <div class="form-group" id="noteDiv">
-                            <label class="col-md-2 control-label" for="photo">商品描述：</label>
+                            <label class="col-md-2 control-label" for=note>商品描述：</label>
                             <div class="col-md-5">
                                 <textarea id="note" name="note" class="form-control" placeholder="请输入关于该商品的信息描述"></textarea>
                             </div>
